@@ -1,20 +1,7 @@
-const express = require('express');
-const server = express();
+require("dotenv").config();
+const server = require("./api/server");
 
-server.use(express.json());
-
-server.get('/api/', (req, res) => {
-  res.status(200).json({ message: 'success' });
-});
-
-server.get('/', (req, res) => {
-  if (process.env.NODE_ENV !== 'development') {
-    // TODO: Actually get this to work
-    res.send(require('./dist'));
-  }
-});
-
-const port = 3333;
+const port = process.env.DB_PORT || 3333;
 server.listen(port, () => {
   console.info(`Now listening on port ${port}!`);
 });

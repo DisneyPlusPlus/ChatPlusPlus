@@ -15,22 +15,12 @@
 {
   _id: UUID;
   username: String;
+  password: String;
   friendsList: [
     user
     // pagination: 20
     // sorted by: most recent message
   ];
-}
-```
-
-- message
-
-```js
-{
-  _id: UUID;
-  senderName: String;
-  message: String;
-  date: Date;
 }
 ```
 
@@ -45,6 +35,17 @@
     message
     // pagination: 100
   ];
+}
+```
+
+- message
+
+```js
+{
+  _id: UUID;
+  senderName: String;
+  message: String;
+  date: Date;
 }
 ```
 
